@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test-app';
-  name = 'John Doe';
-  isCoursesVisible = false;
+  courseName = "";
+  courseInstructor = "";
+  courseCreditPoints = "";
 
-  onShowCourses() {
-    this.isCoursesVisible = true;
+  onAddCourse () {
+    console.log("Course added!");
   }
 }
