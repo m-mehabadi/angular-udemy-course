@@ -4,8 +4,11 @@
             <app-header></app-header>
             <hr>
             <app-sidebar></app-sidebar>
-            <p>This is the list of my courses:</p>
-            <app-course></app-course>
+            <button class="btn btn-primary" (click)="onShowCourses()">Show courses</button>
+            <div [hidden]="!isCoursesVisible">
+                <p>This is the list of my courses:</p>
+                <app-course></app-course>
+            </div>
         </div>
     </div>
 </div>

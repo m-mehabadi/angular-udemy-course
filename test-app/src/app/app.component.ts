@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'test-app';
   name = 'John Doe';
+  isCoursesVisible = false;
+
+  onShowCourses() {
+    this.isCoursesVisible = true;
+  }
 }
