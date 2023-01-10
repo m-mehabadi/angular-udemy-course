@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
 })
 export class CourseComponent {
   courseName = 'Angular';
-  courseCreditPoints = 5;
+  courseCreditPoints = 2;
   courseInstuctor = 'Dr. John Doe';
+
+  getColor() {
+    if (this.courseCreditPoints > 3) {
+      return 'green';
+    }
+    else {
+      return 'blue';
+    }
+  }
 }
