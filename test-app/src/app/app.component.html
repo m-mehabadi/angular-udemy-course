@@ -3,20 +3,24 @@
         <div class="col-md-12">
             <app-header></app-header>
             <hr>
-            <app-sidebar></app-sidebar>
 
+            <app-sidebar></app-sidebar>
             <hr>
+
             <label>Course name:</label>
             <input type="text" [(ngModel)]="courseName">
             <label>Instructor name:</label>
             <input type="text" [(ngModel)]="courseInstructor">
             <label>Course credit points</label>
             <input type="text" [(ngModel)]="courseCreditPoints">
-            <p>You are adding {{courseName}} with {{courseCreditPoints}} presented by {{courseInstructor}}</p>
             <button class="btn btn-primary" (click)="onAddCourse()">Add course</button>
-
             <hr>
-            <app-courses></app-courses>
+
+            <button class="btn btn-primary" (click)="onShowCourses($event)">Show courses</button>
+            <div [hidden]="!isCoursesVisible">
+                <p>This is the list of my courses:</p>
+                <app-course *ngFor="let course of courses" [course]="course"></app-course>
+            </div>
         </div>
     </div>
 </div>
