@@ -2,8 +2,7 @@ This repository holds some basic apps related to an Angular course on udemy whic
 
 To run the app, do:
     
-    ```
     cd test-app
     ng server
-    ```
+    
 
