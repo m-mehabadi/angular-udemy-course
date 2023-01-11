@@ -7,4 +7,4 @@ To run the app, do:
     
 
 Here is a screenshot of the current status of the app:
-![./_doc_images/mainpage.png](An screenshot of the main page of the app)
+![An screenshot of the main page of the app](./_doc_images/mainpage.png)
