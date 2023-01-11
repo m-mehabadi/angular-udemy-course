@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  courseName: string;
-  courseInstructor: string;
-  courseCreditPoints: number;
-
   courses = [{ name: 'Angular', creditPoints: 2, instructor: 'Dr. John Doe' }];
 
   isCoursesVisible = false;
@@ -27,26 +23,17 @@ export class AppComponent {
     }
   }
 
-  onAddCourse() {
-    if (this.areInputsValid()) {
-      this.courses.push({
-        name: this.courseName,
-        creditPoints: this.courseCreditPoints,
-        instructor: this.courseInstructor,
-      });
-    }
-  }
-
-  areInputsValid() {
-    if (
-      this.courseName &&
-      this.courseInstructor &&
-      this.courseCreditPoints &&
-      this.courseCreditPoints > 0
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+  OnCourseCreated(event: {
+    courseName: string;
+    courseInstructor: string;
+    courseCreditPoints: number;
+  }) {
+    console.log(this.courses);
+    this.courses.push({
+      name: event.courseName,
+      instructor: event.courseInstructor,
+      creditPoints: event.courseCreditPoints,
+    });
+    console.log(this.courses);
   }
 }
