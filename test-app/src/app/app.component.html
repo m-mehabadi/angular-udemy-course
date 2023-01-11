@@ -1,20 +1,28 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <app-header></app-header>
-            <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <app-header></app-header>
+      <hr />
 
-            <app-sidebar></app-sidebar>
-            <hr>
+      <app-sidebar></app-sidebar>
+      <hr />
 
-            <app-course-register (courseCreated)="OnCourseCreated($event)"></app-course-register>
-            <hr>
+      <app-course-register
+        (courseCreated)="OnCourseCreated($event)"
+      ></app-course-register>
+      <hr />
 
-            <button class="btn btn-primary" (click)="onShowCourses($event)">Show courses</button>
-            <div [hidden]="!isCoursesVisible">
-                <p>This is the list of my courses:</p>
-                <app-course *ngFor="let course of courses" [course]="course"></app-course>
-            </div>
-        </div>
+      <button class="btn btn-primary" (click)="onShowCourses($event)">
+        Show courses
+      </button>
+      <div [hidden]="!isCoursesVisible">
+        <p>This is the list of my courses:</p>
+        <app-course
+          *ngFor="let course of courses"
+          [course]="course"
+          (courseDeleted)="OnCourseDeleted($event)"
+        ></app-course>
+      </div>
     </div>
+  </div>
 </div>

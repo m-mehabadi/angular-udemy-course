@@ -28,12 +28,24 @@ export class AppComponent {
     courseInstructor: string;
     courseCreditPoints: number;
   }) {
-    console.log(this.courses);
     this.courses.push({
       name: event.courseName,
       instructor: event.courseInstructor,
       creditPoints: event.courseCreditPoints,
     });
-    console.log(this.courses);
+  }
+
+  OnCourseDeleted(event: {
+    name: string;
+    creditPoints: number;
+    instructor: string;
+  }) {
+    this.courses = this.courses.filter((course) => {
+      return (
+        course.name !== event.name ||
+        course.creditPoints !== event.creditPoints ||
+        course.instructor !== event.instructor
+      );
+    });
   }
 }

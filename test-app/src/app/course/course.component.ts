@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-course',
@@ -7,9 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CourseComponent {
   @Input() course: {name: string, creditPoints: number, instructor: string};
-  // courseName = 'Angular';
-  // courseCreditPoints = 2;
-  // courseInstuctor = 'Dr. John Doe';
+  @Output() courseDeleted = new EventEmitter<{name: string, creditPoints: number, instructor: string}>();
 
   getColor() {
     if (this.course.creditPoints > 3) {
@@ -18,5 +16,9 @@ export class CourseComponent {
     else {
       return 'blue';
     }
+  }
+
+  deleteCourse() {
+    this.courseDeleted.emit(this.course);
   }
 }
