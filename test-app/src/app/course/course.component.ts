@@ -12,16 +12,9 @@ export class CourseComponent {
     instructor: string;
     description: string;
   };
-  // @Output() courseDeleted = new EventEmitter<{
-  //   name: string;
-  //   creditPoints: number;
-  //   instructor: string;
-  //   description: string;
-  // }>();
   @Output() courseDeleted = new EventEmitter<void>();
 
   deleteCourse() {
-    // this.courseDeleted.emit(this.course);
     this.courseDeleted.emit();
   }
 }
