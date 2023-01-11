@@ -10,11 +10,14 @@ export class CourseComponent {
   @Output() courseDeleted = new EventEmitter<{name: string, creditPoints: number, instructor: string}>();
 
   getColor() {
-    if (this.course.creditPoints > 3) {
-      return 'green';
+    if (this.course.creditPoints < 2) {
+      return 'yellow';
+    }
+    else if (this.course.creditPoints > 3) {
+      return 'blue';
     }
     else {
-      return 'blue';
+      return 'green';
     }
   }
 
