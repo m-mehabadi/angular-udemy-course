@@ -45,16 +45,16 @@ export class AppComponent {
     });
   }
 
-  OnCourseDeleted(event: {
+  OnCourseDeleted(course: {
     name: string;
     creditPoints: number;
     instructor: string;
   }) {
-    this.courses = this.courses.filter((course) => {
+    this.courses = this.courses.filter((_course) => {
       return (
-        course.name !== event.name ||
-        course.creditPoints !== event.creditPoints ||
-        course.instructor !== event.instructor
+        _course.name !== course.name ||
+        _course.creditPoints !== course.creditPoints ||
+        _course.instructor !== course.instructor
       );
     });
   }

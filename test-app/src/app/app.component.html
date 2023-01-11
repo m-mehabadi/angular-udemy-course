@@ -2,11 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <app-header></app-header>
-      <!-- <hr /> -->
-      <hr class="border border-primary border-3 opacity-75">
-
-      <!-- <app-sidebar></app-sidebar>
-      <hr /> -->
+      <hr class="border border-primary border-3 opacity-75" />
 
       <app-course-register
         (courseCreated)="OnCourseCreated($event)"
@@ -21,7 +17,7 @@
         <app-course
           *ngFor="let course of courses"
           [course]="course"
-          (courseDeleted)="OnCourseDeleted($event)"
+          (courseDeleted)="OnCourseDeleted(course)"
         ></app-course>
       </div>
     </div>
