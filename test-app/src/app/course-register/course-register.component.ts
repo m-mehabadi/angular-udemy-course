@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-course-register',
@@ -10,11 +10,10 @@ export class CourseRegisterComponent {
     courseName: string;
     courseInstructor: string;
     courseCreditPoints: number;
+    courseDescription: string;
   }>();
 
-  // courseName: string;
-  // courseInstructor: string;
-  // courseCreditPoints: number;
+  @ViewChild('description') courseDescription: ElementRef;
 
   onAddCourse(course: {
     name: HTMLInputElement;
@@ -26,6 +25,7 @@ export class CourseRegisterComponent {
         courseName: course.name.value,
         courseInstructor: course.instructor.value,
         courseCreditPoints: Number(course.creditPoints.value),
+        courseDescription: this.courseDescription.nativeElement.value,
       });
     }
   }

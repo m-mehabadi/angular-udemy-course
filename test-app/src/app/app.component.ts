@@ -6,7 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  courses = [{ name: 'Angular', creditPoints: 2, instructor: 'Dr. John Doe' }];
+  courses = [
+    {
+      name: 'Angular',
+      creditPoints: 2,
+      instructor: 'Dr. John Doe',
+      description:
+        'Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations.',
+    },
+  ];
 
   isCoursesVisible = false;
 
@@ -27,11 +35,13 @@ export class AppComponent {
     courseName: string;
     courseInstructor: string;
     courseCreditPoints: number;
+    courseDescription: string;
   }) {
     this.courses.push({
       name: event.courseName,
       instructor: event.courseInstructor,
       creditPoints: event.courseCreditPoints,
+      description: event.courseDescription,
     });
   }
 

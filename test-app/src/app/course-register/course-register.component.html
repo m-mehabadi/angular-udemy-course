@@ -16,4 +16,9 @@
     <input class="form-control" type="text" #creditPoints />
 </div>
 
+<div class="mb-3">
+    <label class="form-label">Course description</label>
+    <textarea class="form-control" rows="3" #description></textarea>
+</div>
+
 <button class="btn btn-primary" (click)="onAddCourse({name, instructor, creditPoints})">Add course</button>
