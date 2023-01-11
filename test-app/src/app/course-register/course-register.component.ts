@@ -12,26 +12,34 @@ export class CourseRegisterComponent {
     courseCreditPoints: number;
   }>();
 
-  courseName: string;
-  courseInstructor: string;
-  courseCreditPoints: number;
+  // courseName: string;
+  // courseInstructor: string;
+  // courseCreditPoints: number;
 
-  onAddCourse() {
-    if(this.areInputsValid()) {
+  onAddCourse(course: {
+    name: HTMLInputElement;
+    instructor: HTMLInputElement;
+    creditPoints: HTMLInputElement;
+  }) {
+    if (this.areInputsValid(course)) {
       this.courseCreated.emit({
-        courseName: this.courseName,
-        courseInstructor: this.courseInstructor,
-        courseCreditPoints: this.courseCreditPoints
-      })
+        courseName: course.name.value,
+        courseInstructor: course.instructor.value,
+        courseCreditPoints: Number(course.creditPoints.value),
+      });
     }
   }
 
-  areInputsValid() {
+  areInputsValid(course: {
+    name: HTMLInputElement;
+    instructor: HTMLInputElement;
+    creditPoints: HTMLInputElement;
+  }) {
     if (
-      this.courseName &&
-      this.courseInstructor &&
-      this.courseCreditPoints &&
-      this.courseCreditPoints > 0
+      course.name.value &&
+      course.instructor.value &&
+      course.creditPoints.value &&
+      Number(course.creditPoints.value) > 0
     ) {
       return true;
     } else {

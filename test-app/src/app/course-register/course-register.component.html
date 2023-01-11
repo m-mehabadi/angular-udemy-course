@@ -1,16 +1,19 @@
 <div class="mb-3">
     <label class="form-label">Course name:</label>
-    <input class="form-control" type="text" [(ngModel)]="courseName" />
+    <!-- <input class="form-control" type="text" [(ngModel)]="courseName" /> -->
+    <input class="form-control" type="text" #name />
 </div>
 
 <div class="mb-3">
     <label class="form-label">Instructor name:</label>
-    <input class="form-control" type="text" [(ngModel)]="courseInstructor" />
+    <!-- <input class="form-control" type="text" [(ngModel)]="courseInstructor" /> -->
+    <input class="form-control" type="text" #instructor />
 </div>
 
 <div class="mb-3">
     <label class="form-label">Course credit points</label>
-    <input class="form-control" type="text" [(ngModel)]="courseCreditPoints" />
+    <!-- <input class="form-control" type="text" [(ngModel)]="courseCreditPoints" /> -->
+    <input class="form-control" type="text" #creditPoints />
 </div>
 
-<button class="btn btn-primary" (click)="onAddCourse()">Add course</button>
+<button class="btn btn-primary" (click)="onAddCourse({name, instructor, creditPoints})">Add course</button>
