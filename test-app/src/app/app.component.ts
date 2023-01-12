@@ -8,28 +8,30 @@ import { Course } from './course.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  courses: Course[];
-  isCoursesVisible = false;
+  // courses: Course[];
+  // isCoursesVisible = false;
 
   constructor(private coursesService: CoursesService) {}
 
-  ngOnInit() {
-    this.courses = this.coursesService.getCourses();
-    this.coursesService.coursesChanged.subscribe((courses) => {
-      this.courses = courses;
-    });
-  }
+  ngOnInit() {}
 
-  onShowCourses(event: Event) {
-    let target = <HTMLButtonElement>event.target;
-    if (this.isCoursesVisible) {
-      this.isCoursesVisible = false;
-      target.textContent = 'Show courses';
-      return;
-    } else {
-      this.isCoursesVisible = true;
-      target.textContent = 'Hide courses';
-      return;
-    }
-  }
+  // ngOnInit() {
+  //   this.courses = this.coursesService.getCourses();
+  //   this.coursesService.coursesChanged.subscribe((courses) => {
+  //     this.courses = courses;
+  //   });
+  // }
+
+  // onShowCourses(event: Event) {
+  //   let target = <HTMLButtonElement>event.target;
+  //   if (this.isCoursesVisible) {
+  //     this.isCoursesVisible = false;
+  //     target.textContent = 'Show courses';
+  //     return;
+  //   } else {
+  //     this.isCoursesVisible = true;
+  //     target.textContent = 'Hide courses';
+  //     return;
+  //   }
+  // }
 }

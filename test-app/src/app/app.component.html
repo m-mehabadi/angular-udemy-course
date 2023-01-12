@@ -2,21 +2,16 @@
   <div class="row">
     <div class="col-md-12">
       <app-header></app-header>
-      <hr class="border border-primary border-3 opacity-75" />
+      <hr style="margin: 0" class="border border-primary border-3 opacity-75" />
 
-      <app-course-register></app-course-register>
-      <hr />
+      <!-- <app-course-register></app-course-register> -->
+      <!-- <hr /> -->
 
-      <button class="btn btn-primary" (click)="onShowCourses($event)">
+      <!-- <button class="btn btn-primary" (click)="onShowCourses($event)">
         Show courses
       </button>
-      <div [hidden]="!isCoursesVisible">
-        <p>This is the list of my courses:</p>
-        <app-course
-          *ngFor="let course of courses"
-          [course]="course"
-        ></app-course>
-      </div>
+       -->
+       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
