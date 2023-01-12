@@ -13,12 +13,10 @@ export class CourseComponent {
     instructor: string;
     description: string;
   };
-  // @Output() courseDeleted = new EventEmitter<void>();
 
   constructor(private coursesService: CoursesService) {}
 
   deleteCourse() {
-    // this.courseDeleted.emit();
     this.coursesService.deleteCourse(this.course);
   }
 }
