@@ -2,14 +2,14 @@
   class="row"
   style="border: 1px solid #ccc !important; margin: 5px 0px; padding: 3px 0px"
 >
-  <details class="col col-10">
+  <details class="col col-11">
     <summary>
       The {{ course.name }} course with {{ course.creditPoints }} (cp) presented
       by {{ course.instructor }}
     </summary>
     <p>{{ course.description }}</p>
   </details>
-  <div class="col col-2">
+  <div class="col col-1">
     <button class="btn btn-primary" (click)="deleteCourse()">Drop</button>
   </div>
 </div>

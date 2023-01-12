@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'app-course-register',
@@ -15,35 +16,28 @@ export class CourseRegisterComponent {
 
   @ViewChild('description') courseDescription: ElementRef;
 
+  constructor(private coursesService: CoursesService) {}
+
   onAddCourse(course: {
     name: HTMLInputElement;
     instructor: HTMLInputElement;
     creditPoints: HTMLInputElement;
   }) {
-    if (this.areInputsValid(course)) {
-      this.courseCreated.emit({
-        courseName: course.name.value,
-        courseInstructor: course.instructor.value,
-        courseCreditPoints: Number(course.creditPoints.value),
-        courseDescription: this.courseDescription.nativeElement.value,
-      });
-    }
+    // if (this.areInputsValid(course)) {
+      // this.courseCreated.emit({
+      //   courseName: course.name.value,
+      //   courseInstructor: course.instructor.value,
+      //   courseCreditPoints: Number(course.creditPoints.value),
+      //   courseDescription: this.courseDescription.nativeElement.value,
+      // });
+    // }
+    this.coursesService.addCourse({
+      name: course.name.value,
+      instructor: course.instructor.value,
+      creditPoints: Number(course.creditPoints.value),
+      description: this.courseDescription.nativeElement.value,
+    });
   }
 
-  areInputsValid(course: {
-    name: HTMLInputElement;
-    instructor: HTMLInputElement;
-    creditPoints: HTMLInputElement;
-  }) {
-    if (
-      course.name.value &&
-      course.instructor.value &&
-      course.creditPoints.value &&
-      Number(course.creditPoints.value) > 0
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+
 }

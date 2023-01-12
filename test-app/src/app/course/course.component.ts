@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'app-course',
@@ -12,9 +13,12 @@ export class CourseComponent {
     instructor: string;
     description: string;
   };
-  @Output() courseDeleted = new EventEmitter<void>();
+  // @Output() courseDeleted = new EventEmitter<void>();
+
+  constructor(private coursesService: CoursesService) {}
 
   deleteCourse() {
-    this.courseDeleted.emit();
+    // this.courseDeleted.emit();
+    this.coursesService.deleteCourse(this.course);
   }
 }

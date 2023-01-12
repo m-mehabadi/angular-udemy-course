@@ -4,9 +4,7 @@
       <app-header></app-header>
       <hr class="border border-primary border-3 opacity-75" />
 
-      <app-course-register
-        (courseCreated)="OnCourseCreated($event)"
-      ></app-course-register>
+      <app-course-register></app-course-register>
       <hr />
 
       <button class="btn btn-primary" (click)="onShowCourses($event)">
@@ -17,7 +15,6 @@
         <app-course
           *ngFor="let course of courses"
           [course]="course"
-          (courseDeleted)="OnCourseDeleted(course)"
         ></app-course>
       </div>
     </div>
