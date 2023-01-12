@@ -1,22 +1,19 @@
 import { EventEmitter, Injectable } from "@angular/core";
+import { Course } from "./course.model";
 
 @Injectable({
   providedIn: 'root',
 })
 export class CoursesService {
-  coursesChanged = new EventEmitter<{
-    name: string;
-    creditPoints: number;
-    instructor: string;
-    description: string;
-  }[]>();
+  // coursesChanged = new EventEmitter<{
+  //   name: string;
+  //   creditPoints: number;
+  //   instructor: string;
+  //   description: string;
+  // }[]>();
+  coursesChanged = new EventEmitter<Course[]>();
 
-  private courses: {
-    name: string;
-    creditPoints: number;
-    instructor: string;
-    description: string;
-  }[] = [
+  private courses: Course[] = [
     {
       name: 'Angular',
       creditPoints: 3,
@@ -37,23 +34,14 @@ export class CoursesService {
     return this.courses.slice();
   }
 
-  addCourse(course: {
-    name: string;
-    creditPoints: number;
-    instructor: string;
-    description: string;
-  }) {
+  addCourse(course: Course) {
     if (this.areInputsValid(course)) {
       this.courses.push(course);
       this.coursesChanged.emit(this.getCourses());
     }
   }
 
-  areInputsValid(course: {
-    name: string;
-    instructor: string;
-    creditPoints: number;
-  }) {
+  areInputsValid(course: Course) {
     if (
       course.name &&
       course.instructor &&
@@ -66,11 +54,7 @@ export class CoursesService {
     }
   }
 
-  deleteCourse(course: {
-    name: string;
-    creditPoints: number;
-    instructor: string;
-  }) {
+  deleteCourse(course: Course) {
     this.courses = this.courses.filter((_course) => {
       return (
         _course.name !== course.name ||

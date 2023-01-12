@@ -7,12 +7,12 @@ import { CoursesService } from '../courses.service';
   styleUrls: ['./course-register.component.css'],
 })
 export class CourseRegisterComponent {
-  @Output() courseCreated = new EventEmitter<{
-    courseName: string;
-    courseInstructor: string;
-    courseCreditPoints: number;
-    courseDescription: string;
-  }>();
+  // @Output() courseCreated = new EventEmitter<{
+  //   courseName: string;
+  //   courseInstructor: string;
+  //   courseCreditPoints: number;
+  //   courseDescription: string;
+  // }>();
 
   @ViewChild('description') courseDescription: ElementRef;
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from './courses.service';
+import { Course } from './course.model';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,13 @@ import { CoursesService } from './courses.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  courses: {
-    name: string;
-    instructor: string;
-    creditPoints: number;
-    description: string;
-  }[];
+  // courses: {
+  //   name: string;
+  //   instructor: string;
+  //   creditPoints: number;
+  //   description: string;
+  // }[];
+  courses: Course[];
   isCoursesVisible = false;
 
   constructor(private coursesService: CoursesService) {}
