@@ -8,12 +8,6 @@ import { Course } from './course.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  // courses: {
-  //   name: string;
-  //   instructor: string;
-  //   creditPoints: number;
-  //   description: string;
-  // }[];
   courses: Course[];
   isCoursesVisible = false;
 

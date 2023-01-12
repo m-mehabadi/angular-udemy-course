@@ -5,12 +5,6 @@ import { Course } from "./course.model";
   providedIn: 'root',
 })
 export class CoursesService {
-  // coursesChanged = new EventEmitter<{
-  //   name: string;
-  //   creditPoints: number;
-  //   instructor: string;
-  //   description: string;
-  // }[]>();
   coursesChanged = new EventEmitter<Course[]>();
 
   private courses: Course[] = [

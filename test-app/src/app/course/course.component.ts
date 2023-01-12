@@ -8,12 +8,6 @@ import { CoursesService } from '../courses.service';
   styleUrls: ['./course.component.css'],
 })
 export class CourseComponent {
-  // @Input() course: {
-  //   name: string;
-  //   creditPoints: number;
-  //   instructor: string;
-  //   description: string;
-  // };
   @Input() course: Course;
 
   constructor(private coursesService: CoursesService) {}

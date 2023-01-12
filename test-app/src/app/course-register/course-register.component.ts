@@ -7,12 +7,6 @@ import { CoursesService } from '../courses.service';
   styleUrls: ['./course-register.component.css'],
 })
 export class CourseRegisterComponent {
-  // @Output() courseCreated = new EventEmitter<{
-  //   courseName: string;
-  //   courseInstructor: string;
-  //   courseCreditPoints: number;
-  //   courseDescription: string;
-  // }>();
 
   @ViewChild('description') courseDescription: ElementRef;
 
@@ -23,14 +17,6 @@ export class CourseRegisterComponent {
     instructor: HTMLInputElement;
     creditPoints: HTMLInputElement;
   }) {
-    // if (this.areInputsValid(course)) {
-      // this.courseCreated.emit({
-      //   courseName: course.name.value,
-      //   courseInstructor: course.instructor.value,
-      //   courseCreditPoints: Number(course.creditPoints.value),
-      //   courseDescription: this.courseDescription.nativeElement.value,
-      // });
-    // }
     this.coursesService.addCourse({
       name: course.name.value,
       instructor: course.instructor.value,
