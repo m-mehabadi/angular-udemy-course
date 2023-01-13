@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Course } from '../course.model';
 import { CoursesService } from '../courses.service';
 
